@@ -1,5 +1,6 @@
 // param name string = 'nagp2024mcart0testacr'
 param name string
+
 param location string = resourceGroup().location
 
 // Check if ACR already exists
