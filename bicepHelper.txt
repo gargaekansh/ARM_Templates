@@ -11,6 +11,10 @@ az deployment group create \
  --name acr-deployment 
  
  az deployment group create --resource-group ADM312735 --template-file deployment.bicep --parameters deployment.parameters.json --name amcart-deployment
+ 
+  az deployment group create --resource-group ADM312735 --template-file parent.bicep --parameters parameters.bicepparam --name amcart-deployment
+ 
+ --parameters parameters.bicepparam
 
 
  az deployment group create \   
