@@ -6,7 +6,7 @@ param cosmosDbContainerName string
 resource cosmosdbAccount 'Microsoft.DocumentDB/databaseAccounts@2023-04-15' = {
   name: cosmosDbName
   location: cosmosDbLocation
-  kind: 'MongoDBv40' // Or 'GlobalDocumentDB' for NoSQL
+  kind: 'MongoDB' // Or 'GlobalDocumentDB' for NoSQL
   properties: {
     consistencyPolicy: {
       defaultConsistencyLevel: 'Session'
@@ -17,7 +17,8 @@ resource cosmosdbAccount 'Microsoft.DocumentDB/databaseAccounts@2023-04-15' = {
       }
     ]
     databaseAccountOfferType: 'Standard'
-    enableFreeTier: false // Change to 'true' if free tier is available
+    // enableFreeTier: false // Change to 'true' if free tier is available
+    enableFreeTier: true // Change to 'true' if free tier is available
   }
 }
 

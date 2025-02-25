@@ -13,6 +13,8 @@ az deployment group create \
  az deployment group create --resource-group ADM312735 --template-file deployment.bicep --parameters deployment.parameters.json --name amcart-deployment
  
   az deployment group create --resource-group ADM312735 --template-file parent.bicep --parameters parameters.bicepparam --name amcart-deployment
+  
+  az deployment group create --resource-group nagp2024mcart0test --template-file parent.bicep --parameters parameters.bicepparam --name amcart-deployment
  
  --parameters parameters.bicepparam
 
@@ -22,3 +24,14 @@ az deployment group create \
  --template-file acr.bicep \   
  --parameters name="nagp2024mcart0testacr1" location="centralindia" \   
  --name acr-deployment 
+ 
+ 
+ az acr list --resource-group nagp2024mcart0test
+ 
+ 
+ ------------------ Resorce Group Deployment ----------------------------------
+ 
+ az deployment sub create --location centralindia --template-file createResourceGroup.bicep --parameters createResourceGroup.parameters.bicepparam --name createResourceGroupDeployment
+ 
+ 
+ az group delete --name nagp2024mcart0test --yes --no-wait
