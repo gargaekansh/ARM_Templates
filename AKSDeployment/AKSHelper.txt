@@ -1,0 +1,166 @@
+
+
+
+-------------------------------------------------------------------------
+az account list --output table
+
+az account set --subscription 88f33a05-cb22-42ba-9529-a5431870b068
+
+
+az acr login --name nagp2024amcart0test0acr0
+
+az acr login --name nagp2024amcart0test0acr0 --expose-token
+
+{
+  "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkVZSlg6Wkw3TjpRTEg3OkxMVkg6RFZZRTpFNlpPOlI0Sjc6N1Y2NDpYQUJEOlZWUkg6SVo1TjpZUlA0In0.eyJqdGkiOiI1MWFmMWM5MS0wZmYwLTRiNDQtYTQ4MS00NWY3MDc1ODUzZWYiLCJzdWIiOiJha2Fuc2guZ2FyZ0BuYWdhcnJvLmNvbSIsIm5iZiI6MTc0MDU2NjA3OSwiZXhwIjoxNzQwNTc3Nzc5LCJpYXQiOjE3NDA1NjYwNzksImlzcyI6IkF6dXJlIENvbnRhaW5lciBSZWdpc3RyeSIsImF1ZCI6Im5hZ3AyMDI0YW1jYXJ0MHRlc3QwYWNyMC5henVyZWNyLmlvIiwidmVyc2lvbiI6IjEuMCIsInJpZCI6IjQ0NjJkMTNhYjJkNDQzYmViZjk5MDk1OTA0YzU0MWI1IiwiZ3JhbnRfdHlwZSI6InJlZnJlc2hfdG9rZW4iLCJhcHBpZCI6ImI2NzdjMjkwLWNmNGItNGE4ZS1hNjBlLTkxYmE2NTBhNGFiZSIsInRlbmFudCI6ImE0NWZlNzFhLWY0ODAtNGU0Mi1hZDVlLWFmZjMzMTY1YWEzNSIsInBlcm1pc3Npb25zIjp7ImFjdGlvbnMiOlsicmVhZCIsIndyaXRlIiwiZGVsZXRlIiwibWV0YWRhdGEvcmVhZCIsIm1ldGFkYXRhL3dyaXRlIiwiZGVsZXRlZC9yZWFkIiwiZGVsZXRlZC9yZXN0b3JlL2FjdGlvbiJdfSwicm9sZXMiOltdfQ.CDVU4GsFLkv43RlCWe42M0EfuAERNsukvyDHNjFwRk8eR6CSstZaAqooM1_-8ElIknB-xxSzYio0yMVTtrWPZPDhSZKktsPzZ_JNJMGiywKjhLIhBf46uYdLuhJQmsazMt0XAKI6WsffvFfoRrwpYnoqoEc77EOxOF3QDqG6IIzz9IL1F5GvMgX3Yq36W6JinBgTyjk_eC8Ov5AVQZ0nDTRqesRjePoK4y4VJJ3zc0LIvjr-HkwvSubX1tl2Xx-u7Onep82SI_B8iruTXczrpbiUbcFORgMunewxLFm5mCA42gGW5uxdVo_5bwalu_C12khXH8NgiF3RUcPuXWIfRA",
+  "loginServer": "nagp2024amcart0test0acr0.azurecr.io"
+}
+
+
+docker tag amcart.catalog.api:1.0.2 nagp2024amcart0test0acr0.azurecr.io/amcart/catalog-api:1.0.2
+
+
+docker login <your-acr-name>.azurecr.io -u 00000000-0000-0000-0000-000000000000 -p <accessToken>
+
+docker login nagp2024amcart0test0acr0.azurecr.io -u 00000000-0000-0000-0000-000000000000 -p eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkVZSlg6Wkw3TjpRTEg3OkxMVkg6RFZZRTpFNlpPOlI0Sjc6N1Y2NDpYQUJEOlZWUkg6SVo1TjpZUlA0In0.eyJqdGkiOiI1MWFmMWM5MS0wZmYwLTRiNDQtYTQ4MS00NWY3MDc1ODUzZWYiLCJzdWIiOiJha2Fuc2guZ2FyZ0BuYWdhcnJvLmNvbSIsIm5iZiI6MTc0MDU2NjA3OSwiZXhwIjoxNzQwNTc3Nzc5LCJpYXQiOjE3NDA1NjYwNzksImlzcyI6IkF6dXJlIENvbnRhaW5lciBSZWdpc3RyeSIsImF1ZCI6Im5hZ3AyMDI0YW1jYXJ0MHRlc3QwYWNyMC5henVyZWNyLmlvIiwidmVyc2lvbiI6IjEuMCIsInJpZCI6IjQ0NjJkMTNhYjJkNDQzYmViZjk5MDk1OTA0YzU0MWI1IiwiZ3JhbnRfdHlwZSI6InJlZnJlc2hfdG9rZW4iLCJhcHBpZCI6ImI2NzdjMjkwLWNmNGItNGE4ZS1hNjBlLTkxYmE2NTBhNGFiZSIsInRlbmFudCI6ImE0NWZlNzFhLWY0ODAtNGU0Mi1hZDVlLWFmZjMzMTY1YWEzNSIsInBlcm1pc3Npb25zIjp7ImFjdGlvbnMiOlsicmVhZCIsIndyaXRlIiwiZGVsZXRlIiwibWV0YWRhdGEvcmVhZCIsIm1ldGFkYXRhL3dyaXRlIiwiZGVsZXRlZC9yZWFkIiwiZGVsZXRlZC9yZXN0b3JlL2FjdGlvbiJdfSwicm9sZXMiOltdfQ.CDVU4GsFLkv43RlCWe42M0EfuAERNsukvyDHNjFwRk8eR6CSstZaAqooM1_-8ElIknB-xxSzYio0yMVTtrWPZPDhSZKktsPzZ_JNJMGiywKjhLIhBf46uYdLuhJQmsazMt0XAKI6WsffvFfoRrwpYnoqoEc77EOxOF3QDqG6IIzz9IL1F5GvMgX3Yq36W6JinBgTyjk_eC8Ov5AVQZ0nDTRqesRjePoK4y4VJJ3zc0LIvjr-HkwvSubX1tl2Xx-u7Onep82SI_B8iruTXczrpbiUbcFORgMunewxLFm5mCA42gGW5uxdVo_5bwalu_C12khXH8NgiF3RUcPuXWIfRA
+
+
+docker push nagp2024amcart0test0acr0.azurecr.io/amcart/catalog-api:1.0.2
+
+
+Create an AKS cluster, while attaching the acr.
+
+az aks create --resource-group nagp2024amcart0test0 --name nagp2024amcart0test0akstest0 --node-count 1 --generate-ssh-keys --attach-acr nagp2024amcart0test0acr0
+
+
+Get the AKS cluster credentials:
+
+az aks get-credentials --resource-group nagp2024amcart0test0 --name nagp2024amcart0test0akstest0
+
+
+Local computer
+
+az aks get-credentials --resource-group <your-resource-group-name> --name <your-aks-cluster-name>
+
+az aks get-credentials --resource-group nagp2024amcart0test0 --name nagp2024amcart0test0akstest0
+
+download Kubectl
+
+az aks install-cli
+
+kubectl version --client
+
+export PATH="$HOME/bin:$PATH"
+
+ ~/bin/kubectl.exe version --client
+
+alias kubectl='~/bin/kubectl.exe'   ----Using an Alias (Temporary):
+
+source ~/.bashrc
+
+# export PATH="$PATH:/mnt/c/Users/akanshgarg/.azure-kubectl"
+# export PATH="$PATH:/mnt/c/Users/akanshgarg/.azure-kubelogin"
+
+
+------------------------------------------------------------------------------------------------
+
+C:\D\Private\Learning\Azure\ARM_Templates\AKSDeployment
+
+
+-----------------------  PATH ----------------------------------
+
+alias kubectl='~/bin/kubectl.exe'
+
+/mnt/c/D/Private/Learning/Azure/ARM_Templates/AKSDeployment
+---------------------------------------------------------------------------------------------------
+
+Verify Context:
+To verify that the current context is set to your AKS cluster, use the command:
+kubectl config current-context
+This will output the name of the current context, which should be nagp2024amcart0test0akstest0.
+Switch Contexts:
+If you have multiple Kubernetes clusters in your kubeconfig, you can switch between them using:
+kubectl config use-context <context-name>
+
+
+
+------------------ Secret Creation -------------------------------------
+
+Create the Kubernetes Secret:
+
+kubectl create secret generic cosmosdb-connection-string --from-literal=connection-string="<your-connection-string>"
+
+OR 
+
+kubectl create secret generic catalog-api-env --from-file=.env
+
+
+--------------------------------------------------------------------------------------------------
+
+
+az aks show --resource-group nagp2024amcart0test0 --name nagp2024amcart0test0akstest0 --query agentPoolProfiles[0].count -o tsv    --check node count 
+
+
+az aks scale --resource-group nagp2024amcart0test0 --name nagp2024amcart0test0akstest0 --node-count 0    --scale down 
+
+az aks delete --resource-group nagp2024amcart0test0 --name nagp2024amcart0test0akstest0 --yes        -- delete aks cluster 
+
+For a demo deployment on Azure Kubernetes Service (AKS) where you want to minimize charges when not actively using it, here's a breakdown of the components you should stop or scale down, and how to do it:
+
+1. AKS Cluster Node Pool:
+
+Scale Down to Zero Nodes:
+This is the most significant cost-saving measure. AKS node pools are where your compute resources reside. Scaling them down to zero effectively stops your application from running and eliminates compute charges.
+
+Use the Azure CLI:
+
+Bash
+
+az aks scale --resource-group <your-resource-group> --name <your-aks-cluster> --node-count 0
+Replace <your-resource-group> and <your-aks-cluster> with your actual values.
+To start it again, run the same command, but change the --node-count to the desired number of nodes.
+
+2. Load Balancer Service:
+
+Delete the Service (if not needed):
+If you don't need external access to your application when it's not in use, delete the LoadBalancer service.
+This will release the public IP address and stop associated charges.
+Use kubectl delete service <service-name>.
+If you need it again, you can apply your service yaml file again.
+Keep in Mind:
+If you delete the LoadBalancer, you'll need to recreate it when you want to access your application again.
+If you want to keep the public IP address, but stop the routing, you can change the service type to ClusterIP.
+3. Azure Container Registry (ACR):
+
+No Direct Stop:
+ACR doesn't have a "stop" mechanism. You're charged for storage.
+If you want to minimize storage cost, you can delete unused images. But be careful, you will need those images later.
+Consider Basic Tier:
+If you're using a higher tier (Standard or Premium), consider switching to the Basic tier when not actively using ACR.
+4. Cosmos DB (if applicable):
+
+Scale Down Throughput (if possible):
+If you're using provisioned throughput, reduce the RU/s to the minimum allowed.
+If you are using the free tier, there is no need to change anything.
+Pause (if supported):
+Check the Cosmos DB documentation for pause functionality, as it changes over time.
+5. Other Azure Resources:
+
+Review your resource group:
+Check for other Azure resources that you might be using (e.g., virtual machines, databases, storage accounts) and stop or scale them down as needed.
+How to Start Again:
+
+Scale Up AKS Node Pool:
+Use az aks scale to increase the node count.
+Redeploy Services:
+Use kubectl apply -f <your-service-yaml> to recreate your LoadBalancer service.
+Ensure ACR Images Are Available:
+Make sure your container images are still in your ACR.
+Start Other Azure Resources:
+Start any other Azure resources that you stopped.
+Key Considerations:
+
+Automation: Use Azure CLI scripts or Azure Automation to automate the stop/start process.
+Data Persistence: If your application uses persistent storage, ensure that your data is not lost when scaling down.
+Monitoring: Monitor your Azure resources to ensure that they are stopped or scaled down correctly.
+Cost Management: Use Azure Cost Management to track your spending and identify areas where you can optimize costs.

@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# /c/D/Private/Learning/Azure/ARM_Templates/BicepDeployment/ResourceGroup
+
+# chmod +x createResourceGroup.sh
+
+# ./createResourceGroup.sh
+
 BASE_NAME="nagp2024mcart0test5"
 COUNTER=0
 
