@@ -32,6 +32,7 @@ param acrName string
 param acrSkuName string = 'Basic'
 param acrLocation string = resourceGroup().location
 param acrAdminUserEnabled bool = false
+param userManagedIdentityName string = 'acr-umi'  // Default UMI name
 
 resource acr 'Microsoft.ContainerRegistry/registries@2022-12-01' = if (!contains(resourceGroup().id, acrName)) {
   name: acrName
